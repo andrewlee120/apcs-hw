@@ -37,4 +37,22 @@ public class Quicksort{
 	}
 	return L;
     }
+
+    public int partition(int[] a, int L, int R){
+	int wall = L;
+	int pos = r.nextInt(R-L)+L;
+	int pivot = a[pos];
+	for (int i = L;i<R-1;i++){
+	    if (a[i] < pivot){
+		int temp = a[i];
+		a[i] = a[wall];
+		a[wall] = temp;
+		wall = wall + 1;
+	    }
+	}
+	return wall;
+    }	
+
+    public int[] qsort2(int[] a){
+    }	
 }
