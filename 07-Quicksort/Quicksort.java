@@ -42,17 +42,35 @@ public class Quicksort{
 	int wall = L;
 	int pos = r.nextInt(R-L)+L;
 	int pivot = a[pos];
-	for (int i = L;i<R-1;i++){
+	int temp = a[pos];
+	a[pos] = a[a.length-1];
+	a[a.length-1] = temp;
+	for (int i = L;i<R;i++){
 	    if (a[i] < pivot){
-		int temp = a[i];
+		temp = a[i];
 		a[i] = a[wall];
 		a[wall] = temp;
 		wall = wall + 1;
 	    }
 	}
+	temp = a[wall];
+	a[wall] = a[R];
+	a[R] = temp;
 	return wall;
     }	
 
-    public int[] qsort2(int[] a){
-    }	
+    public void qsort2(int[] a,int L, int R){
+	if (R - L <= 1){
+	    return;
+	}
+	else {
+	    int p = partition(a,L,R);
+	    if (p - 1 > L){
+		qsort2(a,L,p-1);
+	    }
+	    if (p + 1 < R){
+		qsort2(a,p+1,R);
+	    }
+	}
+    }
 }
