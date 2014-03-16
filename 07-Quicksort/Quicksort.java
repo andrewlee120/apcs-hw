@@ -56,7 +56,16 @@ public class Quicksort{
 	temp = a[wall];
 	a[wall] = a[R];
 	a[R] = temp;
-	return wall;
+	int Rwall = wall;
+	for (int j = wall;j<R;j++){
+	    if (a[j] == pivot){
+		temp = a[j];
+		a[j] = a[Rwall];
+		a[Rwall] = temp;
+		Rwall = Rwall + 1;
+	    }	
+	}	
+	return (wall + Rwall)/2;
     }	
 
     public void qsort2(int[] a,int L, int R){
