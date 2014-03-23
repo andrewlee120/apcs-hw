@@ -16,6 +16,12 @@ public class MyLinkedList {
     }
 
     public String toString() {
+	Node temp = head;
+	String s = "";
+	while (temp.getNext() != null){
+	    s = s + temp.getData();
+	    temp = temp.getNext();
+	}
 	return "" + head;
     }
 
