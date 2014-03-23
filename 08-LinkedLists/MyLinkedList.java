@@ -3,6 +3,7 @@ import java.util.*;
 
 public class MyLinkedList {
     private Node head;
+    private boolean b;
     
     public MyLinkedList() {
 	head = null;
@@ -20,7 +21,7 @@ public class MyLinkedList {
 
     public void add2(int i, String s) {
 	Node tmp = head;
-	for (int j = 0;j<i,j++){
+	for (int j = 0;j<i;j++){
 	    if (tmp.getNext() == null && j+1 != i){
 		System.exit(0);
 	    }
@@ -57,7 +58,7 @@ public class MyLinkedList {
 	}
 	Node old = tmp.getNext();
 	Node str = new Node(s);
-	tmp.getNext(str);
+	tmp.setNext(str);
 	return old.toString();
     }
 
@@ -77,7 +78,7 @@ public class MyLinkedList {
     }
 
     public int find(String s){
-	boolean b = false;
+	b = false;
 	Node tmp = head;
 	int count = 0;
 	while (!b){
