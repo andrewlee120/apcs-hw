@@ -7,7 +7,8 @@ public class MyLinkedList {
     private Node tail;
 
     public MyLinkedList() {
-	head = new Node("0");
+	head = new Node("");
+	tail = new Node("");
     }
 
     /*    public void add(String s) {
@@ -113,7 +114,7 @@ public class MyLinkedList {
 	Node tmp = head;
 	int count = 0;
 	while (!b){
-	    if (tmp.getData().equals("0")){
+	    if (tmp.getData().equals("")){
 		b = true;
 		return count;
 	    }
