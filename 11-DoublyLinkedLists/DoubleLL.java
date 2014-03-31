@@ -1,7 +1,4 @@
 //Andrew and Sappha
-// We found out that the three was collected by the garbage collector
-// but we didn't fix the code yet
-
 
 public class DoubleLL<E> {
     private class Node<E> {
