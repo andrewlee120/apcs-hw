@@ -45,8 +45,11 @@ public class DoubleLL<E> {
 	}
 	else {
 	    n.next = current;
-	    current.prev = n;
-	    current = n;
+            n.prev = current.prev;
+            if (current.prev != null)
+                current.prev.next =n;
+                current.prev =n;
+                current =n;
 	}
     }
 
@@ -66,16 +69,16 @@ public class DoubleLL<E> {
     public String toString() {
 	if (current == null)
 	    return "";
-	while (current.getPrev() != null)
-	    current = current.getPrev();
-
 	Node<E> tmp = current;
-	String s = "";
-	while (tmp != null){
-	    s = s + tmp.getData() + " ";
-	    tmp = tmp.getNext();
-	}
-	return s;
+        while (tmp.getPrev() != null) {
+             tmp = tmp.getPrev();
+        }
+        String s = "";
+        while (tmp != null) {
+            s = s + tmp.getData() + "";
+            tmp = tmp.getNext();
+        }
+        return s;
     }
 
     public static void main(String[] args) {
