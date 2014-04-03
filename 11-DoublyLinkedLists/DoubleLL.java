@@ -1,7 +1,4 @@
 //Andrew and Sappha
-// We found out that the three was collected by the garbage collector
-// but we didn't fix the code yet
-
 
 public class DoubleLL<E> {
     private class Node<E> {
@@ -44,7 +41,12 @@ public class DoubleLL<E> {
 	    current = n;
 	}
 	else {
-	  
+	    n.next = current;
+            n.prev = current.prev;
+            if (current.prev != null)
+                current.prev.next =n;
+	    current.prev =n;
+	    current =n;
 	}
     }
 
@@ -64,16 +66,16 @@ public class DoubleLL<E> {
     public String toString() {
 	if (current == null)
 	    return "";
-	while (current.getPrev() != null)
-	    current = current.getPrev();
-
 	Node<E> tmp = current;
-	String s = "";
-	while (tmp != null){
-	    s = s + tmp.getData() + " ";
-	    tmp = tmp.getNext();
-	}
-	return s;
+        while (tmp.getPrev() != null) {
+             tmp = tmp.getPrev();
+        }
+        String s = "";
+        while (tmp != null) {
+            s = s + tmp.getData() + "";
+            tmp = tmp.getNext();
+        }
+        return s;
     }
 
     public static void main(String[] args) {
