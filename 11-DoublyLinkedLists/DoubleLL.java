@@ -44,9 +44,7 @@ public class DoubleLL<E> {
 	    current = n;
 	}
 	else {
-	    n.next = current;
-	    current.prev = n;
-	    current = n;
+	  
 	}
     }
 
