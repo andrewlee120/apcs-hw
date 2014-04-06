@@ -1,6 +1,6 @@
 public class Driver {
     public static void main(String[] args){
-	MyStack stack = new MyStack();
+	MyStackArray stack = new MyStackArray();
 	stack.push("one");
 	stack.push("two");
 	stack.push("three");
