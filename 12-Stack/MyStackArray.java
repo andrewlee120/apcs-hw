@@ -1,26 +1,18 @@
 public class MyStackArray {
     private String[] stack;
-    private int numElts;
     private int top;
     
     public MyStackArray() {
 	stack = new String[10];
-	numElts = 0;
 	top = 0;
     }
 
     public void push(String s){
 	if (top+1 > stack.length){
 	    grow();
-	    stack[top+1] = s;
-	    top = top + 1;
-	    numElts = 0;
 	}
-	else {
-	    stack[top + 1] = s;
-	    top = top + 1;
-	    numElts = 0;
-	}
+	stack[top] = s;
+	top = top + 1;
     }
 
     public void grow() {
@@ -32,18 +24,17 @@ public class MyStackArray {
     }
 
     public String pop() {
-	String s = stack[top];
+	String s = stack[top-1];
 	top = top - 1;
-	numElts = numElts - 1;
 	return s;
     }
 
     public String peek() {
-	return stack[top];
+	return stack[top-1];
     }
 
     public int size() {
-	return numElts;
+	return top;
     }
 
     public boolean isEmpty() {
@@ -52,7 +43,7 @@ public class MyStackArray {
 
     public String toString() {
 	String s = "";
-	for (int i = top; i > 0; i--){
+	for (int i = top-1; i >= 0; i--){
 	    s += stack[i] + ", ";
 	}
 	return s;
