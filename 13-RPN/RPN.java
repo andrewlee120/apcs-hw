@@ -50,8 +50,14 @@ public class RPN {
 		System.out.println(stack.peek());
 	    }
 	    else {
-		stack.push(s);
-		System.out.println(stack.peek());
+		try {
+		    int temp = Integer.parseInt(s);
+		    stack.push(s);
+		    System.out.println(stack.peek());
+		}
+		catch (Exception e) {
+		    System.out.print(s + " is an invalid input."+ "\n");
+		}
 	    }
 	}
     }
