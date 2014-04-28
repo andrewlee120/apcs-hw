@@ -49,7 +49,10 @@ public class BST {
     }
 
     public Node search2(Node c, int x){
-	if (c == null || c.getData() == x){
+	if (c == null){
+	    return c;
+	}
+	if (c.getData() == x){
 	    return c;
 	}
 	if (x < c.getData()){
