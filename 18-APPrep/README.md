@@ -1,0 +1,1 @@
+Today I prepped for the AP US History exam by taking a practice exam (only able to do some multiple choice questions out of 100 of them) and reviewed my notes.
